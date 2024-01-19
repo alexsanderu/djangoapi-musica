@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from artistas.serializer import ArtistaSerializer, AlbumSerializer
-from artistas.models import Artista, Album
+from artistas.serializer import ArtistaSerializer, AlbumSerializer, MusicaSerializer
+from artistas.models import Artista, Album, Musica
 
 class ArtistasViewSet(viewsets.ModelViewSet):
     """"LISTA DE ARTISTAS"""
@@ -12,3 +12,7 @@ class AlbunsViewSet(viewsets.ModelViewSet):
     queryset = Album.objects.all()
     serializer_class = AlbumSerializer
     
+class MusicaViewSet(viewsets.ModelViewSet):
+    """LISTA DE MUSICAS"""
+    queryset = Musica.objects.all()
+    serializer_class = MusicaSerializer
